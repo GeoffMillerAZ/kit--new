@@ -50,7 +50,7 @@ mindmap
 
 ## 1. Core Philosophy & Stack ✅
 *   **Language Preference:** Golang (1.23+) for backend logic due to its performance, type safety, and standard library.
-*   **Frontend Decision Tree:**
+*   **Frontend Strategy:**
     *   **Context:** Is this a local developer tool or a hosted SaaS product?
     *   **Local Tool:** Use **Vite + React** (SPA).
         *   *Why:* Lightweight, fast build times, easy to bundle with Go binaries (embed).
@@ -58,6 +58,7 @@ mindmap
         *   *Why:* SEO, Server-Side Rendering, API Routes, robust routing.
     *   **Hybrid:** Use **Both**.
         *   *Scenario:* A CLI tool (Vite) that interacts with a Cloud Dashboard (Next.js).
+    *   **Design & Components:** Always use the **TailwindPlus MCP Server** first for design and component inspiration. It provides a standardized library for Marketing, Application UI, and eCommerce components.
 *   **Infrastructure & Containers:**
     *   **Docker:** Standard for local development environments and deployment.
     *   **Local Builds:** Use `Dockerfile` and `docker-compose.yml` to spin up dependencies (DBs, Caches) locally, ensuring "it works on my machine" means "it works everywhere".

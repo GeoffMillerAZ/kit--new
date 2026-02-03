@@ -37,9 +37,16 @@ graph TD
 *   **Use Case:** Admin panels, local-first tools, agent control planes.
 *   **Key Features:** Fast Refresh, small bundle size, can be bundled into a single Go binary using `embed`.
 
-### 🚀 Next.js (Hosted SaaS)
-*   **Use Case:** Public-facing applications, content-heavy sites.
-*   **Key Features:** Server Components, SEO optimization, built-in API routing.
+### 🚀 Next.js (Hosted SaaS & Static Sites)
+*   **Use Case:** Public-facing applications, blogs, brochure sites, and SaaS products.
+*   **Performance Standard:** For static content (blogs/brochures), we target a **99/100 Lighthouse Score**.
+*   **Key Features & Best Practices:**
+    *   **Server Components (RSC):** Use for everything except interactive elements (forms/buttons).
+    *   **Static Export:** Enable `output: 'export'` for purely static sites to deploy to any CDN.
+    *   **Optimization Components:**
+        *   `next/image`: Aggressively use for automatic WebP/AVIF conversion and lazy loading.
+        *   `next/font`: Self-host fonts to eliminate Layout Shift (CLS).
+        *   `next/script`: Load third-party scripts off the main thread.
 
 ---
 
@@ -79,4 +86,16 @@ We replace complex Makefiles with **Task** (`Taskfile.yml`).
 Projects should strive for **Local-First** early on.
 *   Start with `MemoryAdapter` or `FileAdapter` (JSON/Cue).
 *   Transition to Postgres/CloudDB once the domain logic is stable.
-*   Hexagonal architecture makes this transition trivial.
+*   **Bundle Analysis:** Use `@next/bundle-analyzer` to ensure no accidental bloat.
+
+---
+
+## 6. UI Design & Component Library
+
+We prioritize consistency and speed by leveraging established component libraries.
+
+*   **Primary Resource:** **TailwindPlus MCP Server**.
+    *   **Guideline:** Always use the `tailwindplus` MCP server first for design inspiration and component retrieval.
+    *   **Workflow:** Search for components (Marketing, Application UI, eCommerce) using `search_component_names` or `list_component_names`, and retrieve the code for the chosen framework (React/HTML/Vue).
+*   **Styling:** Tailwind CSS (v3 or v4) is the mandatory styling framework.
+*   **Icons:** Use Lucide React (or equivalent for the chosen framework) for a clean, consistent icon set.

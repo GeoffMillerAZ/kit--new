@@ -67,3 +67,13 @@ To maintain high development velocity, we use **Memory Adapters** and **Mocks**.
 *   **Mock Early:** If the database or AI API is not ready, implement a `MemoryAdapter` that satisfies the Port interface.
 *   **Mock Often:** Unit tests for Core Services should *always* use mocks for their dependencies (Adapters) to ensure isolation and speed.
 *   **Dependency Injection:** This is only possible because we strictly follow Hexagonal Architecture and never use global state.
+
+---
+
+## 6. Performance Standards
+
+Quality includes performance. For public-facing web applications, we adhere to strict performance budgets.
+
+*   **Lighthouse Score:** Target **99/100** for Performance on static content (blogs, marketing pages).
+*   **Core Web Vitals:** Must pass all Core Web Vitals (LCP, FID, CLS).
+*   **Bundle Analysis:** Use `@next/bundle-analyzer` to ensure no accidental bloat.
