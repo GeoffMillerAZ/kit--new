@@ -4,6 +4,9 @@
 
 This "Kit" serves as the blueprint for future projects, distilling the reusable architectural decisions, workflows, and toolchains. It acts as a reference implementation for our "Gold Standard" engineering practices.
 
+## 🚀 Getting Started
+*   **[_NEW_PROJECT_INIT.md](./_NEW_PROJECT_INIT.md):** The mandatory Master Entry Point for starting a new project. It walks you through Design Clarification, Stack Selection, Planning, and Execution.
+
 ## 🧠 Visualization
 
 ```mermaid
