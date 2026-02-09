@@ -16,21 +16,23 @@ We prefer Go for core business logic and CLI tools.
 
 ## 2. Frontend Strategy: The Decision Tree
 
-We maintain two primary paths for User Interfaces, depending on the distribution model.
+We maintain multiple paths for User Interfaces, selecting the best tool for the project's specific needs.
 
 ### 🌳 The Decision Tree
 
 ```mermaid
 graph TD
-    Start[New Project UI] --> Q1{Is it a local tool?}
-    Q1 -- Yes --> Vite[Vite + React SPA]
-    Q1 -- No --> Q2{Is it a hosted SaaS?}
-    Q2 -- Yes --> Next[Next.js App Router]
-    Q2 -- No --> Hybrid[Hybrid Architecture]
+    Start[New Project UI] --> Q1{Local Tool or SaaS?}
+    Q1 -- Local --> Vite[Vite + React SPA]
+    Q1 -- SaaS --> Q2{Complex Logic or SEO?}
+    Q2 -- Complex --> Next[Next.js App Router]
+    Q2 -- SEO/Hypermedia --> Q3{Hypermedia Driven?}
+    Q3 -- Yes --> Datastar[Datastar / Gonads]
+    Q3 -- No --> Next
     
     Vite --> ViteNote[Lightweight, Embedded in Go binary]
     Next --> NextNote[SEO, SSR, Complex Routing]
-    Hybrid --> HybridNote[CLI Tool + Cloud Dashboard]
+    Datastar --> DSNote[Hypermedia-first, Low JS, Real-time]
 ```
 
 ### ⚛️ Vite + React (Local Tools)
@@ -48,9 +50,24 @@ graph TD
         *   `next/font`: Self-host fonts to eliminate Layout Shift (CLS).
         *   `next/script`: Load third-party scripts off the main thread.
 
+### ⚡ Datastar & Gonads (Hypermedia & Real-time)
+*   **Use Case:** Real-time dashboards, interactive UIs where a full SPA is overkill, and hypermedia-driven applications.
+*   **Key Features:** Minimal client-side state, server-driven interactions, and deep integration with Go backends.
+
 ---
 
-## 3. Containerization: Docker
+## 3. Advanced Architectural Patterns (Backend)
+
+For complex domain logic, we evaluate the need for specialized patterns.
+
+*   **Standard:** Clean Hexagonal Architecture (Ports & Adapters).
+*   **Event Sourcing:** Considered for high-auditability systems or where history is a first-class citizen.
+*   **CQRS (Command Query Responsibility Segregation):** Used when read and write performance requirements diverge significantly.
+*   **Evaluation:** We examine the specific needs of the project—scale, complexity, and audit requirements—to decide when to move beyond standard CRUD patterns.
+
+---
+
+## 4. Containerization: Docker
 
 We use Docker to eliminate "works on my machine" syndrome.
 

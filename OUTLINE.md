@@ -51,14 +51,14 @@ mindmap
 ## 1. Core Philosophy & Stack ✅
 *   **Language Preference:** Golang (1.23+) for backend logic due to its performance, type safety, and standard library.
 *   **Frontend Strategy:**
-    *   **Context:** Is this a local developer tool or a hosted SaaS product?
+    *   **Context:** Selection is based on the specific needs of the project (SEO, Real-time, Local-first).
     *   **Local Tool:** Use **Vite + React** (SPA).
-        *   *Why:* Lightweight, fast build times, easy to bundle with Go binaries (embed).
     *   **Hosted Application:** Use **Next.js** (SSR/React Server Components).
-        *   *Why:* SEO, Server-Side Rendering, API Routes, robust routing.
-    *   **Hybrid:** Use **Both**.
-        *   *Scenario:* A CLI tool (Vite) that interacts with a Cloud Dashboard (Next.js).
-    *   **Design & Components:** Always use the **TailwindPlus MCP Server** first for design and component inspiration. It provides a standardized library for Marketing, Application UI, and eCommerce components.
+    *   **Hypermedia/Real-time:** Use **Datastar & Gonads** for server-driven interactive UIs.
+    *   **Design & Components:** Always use the **TailwindPlus MCP Server** first for design and component inspiration.
+*   **Advanced Architectural Patterns (Backend):**
+    *   **Standard:** Clean Hexagonal Architecture.
+    *   **Advanced:** Evaluate **Event Sourcing** and **CQRS** for complex domains requiring high auditability or diverging performance needs.
 *   **Infrastructure & Containers:**
     *   **Docker:** Standard for local development environments and deployment.
     *   **Local Builds:** Use `Dockerfile` and `docker-compose.yml` to spin up dependencies (DBs, Caches) locally, ensuring "it works on my machine" means "it works everywhere".
