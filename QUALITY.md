@@ -40,18 +40,27 @@ func TestService_Action(t *testing.T) {
 
 ---
 
-## 3. Data Fixtures: The Cuelang Advantage
+## 3. Data Fixtures: Hierarchical & Composable
 
-We avoid brittle, giant JSON files for test data. Instead, we use **Compositional Cuelang Fixtures**.
+We avoid brittle, flat JSON blobs. Instead, we use a **Hierarchical Fixture Catalog** powered by Cuelang.
 
-*   **#BaseData:** Define a standard entity.
-*   **Mixins:** Define variations (e.g., `#BannedUser`, `#PremiumUser`).
-*   **Unification:** In your test, unify the base with a mixin to create the exact state needed for a scenario.
-*   **Dryness:** This ensures that if the schema changes, we update it in one place, and all test fixtures are automatically updated.
+*   **Compositional Logic:** Start with a `#BaseData` (Happy Path) fixture. Create specific scenarios by **patching** the base with variations (e.g., `#BaseData & { status: "expired" }`).
+*   **Hierarchical Organization:** Fixtures are organized by domain and scenario, allowing developers to import and extend existing states for complex tests.
+*   **Source of Truth:** These fixtures are the "Gold Standard" state for both automated tests and local seeding.
 
 ---
 
-## 4. UI Testing Strategy
+## 4. User Story Catalog & UI Verification
+
+To prove the application works, we maintain a **User Story Catalog**.
+
+*   **High-Fidelity Proof:** Every user story must have corresponding UI tests (Playwright) that utilize the hierarchical fixtures.
+*   **Visual Documentation:** These tests serve as executable documentation, proving that the application handles every defined state correctly.
+*   **Consistency:** The same fixtures used for unit tests must be used for UI verification to ensure the "Chain of Truth" remains unbroken.
+
+---
+
+## 5. UI Testing Strategy
 
 We separate UI testing into two distinct layers:
 

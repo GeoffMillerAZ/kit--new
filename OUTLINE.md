@@ -56,8 +56,10 @@ mindmap
     *   **Hosted Application:** Use **Next.js** (SSR/React Server Components).
     *   **Hypermedia/Real-time:** Use **Datastar & Gonads** for server-driven interactive UIs.
     *   **Design & Components:** Always use the **TailwindPlus MCP Server** first for design and component inspiration.
+    *   **Specialized Modes:** Support **Local Dev & Demo** modes with role selection (skip login) and hierarchical data seeding.
 *   **Advanced Architectural Patterns (Backend):**
     *   **Standard:** Clean Hexagonal Architecture.
+    *   **Persistence:** **SQLite** is the standard for local-first development and demo environments.
     *   **Advanced:** Evaluate **Event Sourcing** and **CQRS** for complex domains requiring high auditability or diverging performance needs.
 *   **Infrastructure & Containers:**
     *   **Docker:** Standard for local development environments and deployment.
@@ -135,6 +137,7 @@ mindmap
         3.  **Refactor:** Clean up the code while staying Green.
 *   **Testing Strategy:**
     *   **Table-Driven Tests (TDT):** The Go idiomatic way to test permutations.
+    *   **Hierarchical Fixtures:** Use composable Cuelang fixtures to build a **User Story Catalog** that proves UI and logic correctness.
     *   **Mocking:** Explicit dependency injection allows testing Core logic without real IO.
     *   **Coverage:** Use coverage profiles to identify untested decision branches.
 *   **Data Fixtures (The Cue Advantage):**

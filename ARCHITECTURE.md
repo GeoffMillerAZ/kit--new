@@ -46,7 +46,18 @@ graph TD
 
 ---
 
-## 2. Directory Structure
+## 2. Local Dev & Demo Implementation
+
+Hexagonal Architecture makes specialized runtime modes (Local/Demo) clean and safe.
+
+*   **Mock Adapters:** Use a `SQLiteAdapter` or `MemoryAdapter` for local/demo persistence.
+*   **Seeding Logic:** The wiring phase in `main.go` detects the environment. If `APP_MODE=demo`, the adapter is initialized and then seeded with data from the `fixtures/` directory before being passed to the Core Services.
+*   **Role Selection Port:** Define a `UserSessionPort` that allows the UI to "assume" a role in demo mode, bypassing the OIDC/Auth adapter.
+*   **Isolation:** The Core logic remains identical regardless of whether it's talking to a real Postgres DB or a seeded SQLite instance.
+
+---
+
+## 3. Directory Structure
 
 A standardized layout ensures that any developer (or AI) can navigate the project immediately.
 

@@ -98,16 +98,29 @@ We replace complex Makefiles with **Task** (`Taskfile.yml`).
 
 ---
 
-## 5. Persistence: Local-First to Cloud-Native
+## 5. Persistence: SQLite to Cloud-Native
 
-Projects should strive for **Local-First** early on.
-*   Start with `MemoryAdapter` or `FileAdapter` (JSON/Cue).
-*   Transition to Postgres/CloudDB once the domain logic is stable.
+Projects prioritize **Local-First** development and simple implementations.
+
+*   **SQLite:** The standard for local development, demo modes, and simple backend implementations. It provides a real SQL environment without the overhead of a managed database.
+*   **Transition:** Hexagonal architecture makes the transition from SQLite to Postgres or CloudDB trivial.
 *   **Bundle Analysis:** Use `@next/bundle-analyzer` to ensure no accidental bloat.
 
 ---
 
-## 6. UI Design & Component Library
+## 6. Local Dev & Demo Modes
+
+To accelerate development and sales/demo cycles, applications must support specialized runtime modes.
+
+*   **Role-Based Entry:** In `local` or `demo` mode, the app should provide a "Role Selection" page that skips the actual login flow. Users simply select the persona they are testing (e.g., Admin, User, Guest).
+*   **Security:** These modes must be strictly gated by environment variables and excluded from production builds.
+*   **Seeding:** Upon launch, the backend (SQLite or Memory) is seeded with data from the **Hierarchical Fixture Catalog**.
+*   **Decoupled State:** While the app functions correctly using the seeded data, it should **not** have two-way binding to the fixture source files. Updates occur in the local database instance only.
+*   **Workspace Integration:** Use the local workspace directory (or `.gemini/tmp`) for persistent local storage during these modes.
+
+---
+
+## 7. UI Design & Component Library
 
 We prioritize consistency and speed by leveraging established component libraries.
 
