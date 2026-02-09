@@ -6,6 +6,7 @@ This "Kit" serves as the blueprint for future projects, distilling the reusable 
 
 ## 🚀 Getting Started
 *   **[_NEW_PROJECT_INIT.md](./_NEW_PROJECT_INIT.md):** The mandatory Master Entry Point for starting a new project. It walks you through Design Clarification, Stack Selection, Planning, and Execution.
+*   **[_AUDIT.md](./_AUDIT.md):** The guide for auditing existing projects to align them with "Gold Standard" patterns. Use this to identify gap analysis and modernization opportunities.
 
 ## 🧠 Visualization
 
