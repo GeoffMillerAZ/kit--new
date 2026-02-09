@@ -2,7 +2,21 @@
 
 This document defines the development lifecycle and the rigorous tracking system used to ensure high-fidelity software delivery, especially when augmented by AI.
 
-## 1. Spec-Driven Development (SDD)
+## 1. Initial Architecture Pass
+
+Before implementation begins, we perform a standardized **Initial Architecture Pass** to ensure the stack matches the project's requirements.
+
+### 🖼️ At-a-Glance Process
+1.  **Requirement Analysis:** Identify sub-domains (e.g., Public UI, Admin Tool, Core Engine).
+2.  **Visual Selection:** Use the decision trees in `STACK.md` to map technologies to sub-domains.
+3.  **Form Completion:** Fill out the `ARCH_SELECTION_FORM.md` template.
+    *   *Default-First:* Start with the recommended "Gold Standard" selections.
+    *   *Override with Care:* Only change selections if the domain specifically demands it.
+4.  **ADR Creation:** For any non-standard or "Hybrid" architectural choices, record an Architectural Decision Record (ADR).
+
+---
+
+## 2. Spec-Driven Development (SDD)
 
 We never implement logic without a specification. The **Spec** is the "Prompt" for the AI and the "Source of Truth" for the developer.
 

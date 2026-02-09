@@ -52,6 +52,7 @@ mindmap
 *   **Language Preference:** Golang (1.23+) for backend logic due to its performance, type safety, and standard library.
 *   **Frontend Strategy:**
     *   **Context:** Selection is based on the specific needs of the project (SEO, Real-time, Local-first).
+    *   **Hybrid Architecture:** A single project can use multiple frontend strategies (e.g., Next.js for SEO + Datastar for Admin).
     *   **Local Tool:** Use **Vite + React** (SPA).
     *   **Hosted Application:** Use **Next.js** (SSR/React Server Components).
     *   **Hypermedia/Real-time:** Use **Datastar & Gonads** for server-driven interactive UIs.
@@ -102,6 +103,7 @@ mindmap
     *   **Dryness:** "Don't Repeat Yourself" applies to data too. Define common structures once and reuse them.
 
 ## 4. Methodology & Process ✅
+*   **Initial Architecture Pass:** Visual stack selection process using `ARCH_SELECTION_FORM.md` and `STACK.md` decision trees.
 *   **Spec-Driven Development (SDD):**
     *   **The Chain of Truth:** User Story -> Technical Spec -> Test Case -> Implementation.
     *   *Rule:* Never write code without a Spec defining the acceptance criteria.

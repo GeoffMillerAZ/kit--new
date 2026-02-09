@@ -16,23 +16,21 @@ We prefer Go for core business logic and CLI tools.
 
 ## 2. Frontend Strategy: The Decision Tree
 
-We maintain multiple paths for User Interfaces, selecting the best tool for the project's specific needs.
+We maintain multiple paths for User Interfaces, selecting the best tool for the specific job. **Note:** A single project can (and often should) use multiple strategies for different sub-domains.
 
-### 🌳 The Decision Tree
+### 🌳 UI Selection Tree
 
 ```mermaid
 graph TD
-    Start[New Project UI] --> Q1{Local Tool or SaaS?}
-    Q1 -- Local --> Vite[Vite + React SPA]
-    Q1 -- SaaS --> Q2{Complex Logic or SEO?}
-    Q2 -- Complex --> Next[Next.js App Router]
-    Q2 -- SEO/Hypermedia --> Q3{Hypermedia Driven?}
-    Q3 -- Yes --> Datastar[Datastar / Gonads]
-    Q3 -- No --> Next
+    Start[New Project UI] --> Q1{Primary Requirement?}
+    Q1 -- "SEO / Public Content" --> Next[Next.js App Router]
+    Q1 -- "Complex Client State" --> Next
+    Q1 -- "Real-time / Hypermedia" --> Datastar[Datastar / Gonads]
+    Q1 -- "Internal Tools / Local" --> Vite[Vite + React SPA]
     
-    Vite --> ViteNote[Lightweight, Embedded in Go binary]
     Next --> NextNote[SEO, SSR, Complex Routing]
     Datastar --> DSNote[Hypermedia-first, Low JS, Real-time]
+    Vite --> ViteNote[Lightweight, Embedded in Go binary]
 ```
 
 ### ⚛️ Vite + React (Local Tools)
@@ -56,7 +54,26 @@ graph TD
 
 ---
 
-## 3. Advanced Architectural Patterns (Backend)
+## 3. Persistence & Logic: CRUD vs. Event Sourcing
+
+We evaluate the domain complexity before choosing a persistence pattern.
+
+### 🌳 Persistence Selection Tree
+
+```mermaid
+graph TD
+    Start[New Feature/Service] --> Q1{Requirement?}
+    Q1 -- "Simple Data Storage" --> CRUD[Standard CRUD]
+    Q1 -- "Audit Trail / History" --> ES[Event Sourcing]
+    Q1 -- "Complex Domain Rules" --> ES
+    Q1 -- "Read/Write Divergence" --> CQRS[ES + CQRS]
+    
+    CRUD --> CRUDNote[Postgres / SQLite]
+    ES --> ESNote[Append-only Event Store]
+    CQRS --> CQRSNote[Separate Read Models / Projections]
+```
+
+### 🏗️ Advanced Architectural Patterns
 
 For complex domain logic, we evaluate the need for specialized patterns.
 
@@ -67,7 +84,21 @@ For complex domain logic, we evaluate the need for specialized patterns.
 
 ---
 
-## 4. Containerization: Docker
+## 4. Hybrid Architectures: The "Gold Standard" Way
+
+A "Gold Standard" project is rarely monolithic in its architectural choices. We encourage **Context-Specific Architecture**:
+
+*   **Example:** 
+    *   **Landing Page/Blog:** Next.js (Static Export) for speed and SEO.
+    *   **Admin Dashboard:** Datastar/Gonads for real-time hypermedia updates.
+    *   **Core Transaction Engine:** Event Sourcing for auditability and consistency.
+    *   **Reporting API:** CQRS with specialized Read Models (Projections).
+
+**Rule:** Always pick the best tool for the sub-domain, while maintaining consistent Hexagonal boundaries between them.
+
+---
+
+## 5. Containerization: Docker
 
 We use Docker to eliminate "works on my machine" syndrome.
 
