@@ -27,6 +27,7 @@
 *Select the primary pattern for the core domain.*
 
 - [x] **Standard CRUD (SQLite/Postgres):** Recommended for most applications.
+- [x] **gRPC / Protocol Buffers:** Recommended for all service communication.
 - [ ] **Event Sourcing:** Recommended for systems requiring high auditability or complex history.
 - [ ] **CQRS:** Recommended for performance-divergent read/write requirements.
 

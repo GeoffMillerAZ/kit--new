@@ -19,6 +19,7 @@ For each major area below, create an **Evaluation Document** (e.g., `docs/audit/
 
 - [ ] **Hexagonal Boundary Check:** Does domain logic leak into UI components or database queries?
 - [ ] **Dependency Injection:** Are we using global state or `init()` functions instead of explicit wiring?
+- [ ] **Communication Standard:** Are we favoring gRPC and Protobufs for service-to-service communication?
 - [ ] **Port Standards:** Do we have clearly defined interfaces for all infrastructure (Adapters)?
 
 ---

@@ -7,6 +7,8 @@ This document defines the "Gold Standard" technology stack and the decision logi
 We prefer Go for core business logic and CLI tools.
 
 *   **Rationale:** Static typing, high performance, excellent concurrency primitives (goroutines/channels), and a robust standard library that minimizes "npm-style" dependency bloat.
+*   **Communication:** We favor **gRPC and Protocol Buffers (protobufs)** for internal and service-to-service communication.
+    *   *Why:* Type safety across boundaries, high performance, and code generation for multiple languages.
 *   **Standards:** 
     *   Strict adherence to `gofmt` and `goimports`.
     *   No `init()` functions (explicit wiring only).

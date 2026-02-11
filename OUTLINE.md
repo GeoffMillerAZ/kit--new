@@ -64,6 +64,7 @@ mindmap
     *   **Specialized Modes:** Support **Local Dev & Demo** modes with role selection (skip login) and hierarchical data seeding.
 *   **Advanced Architectural Patterns (Backend):**
     *   **Standard:** Clean Hexagonal Architecture.
+    *   **Communication:** **gRPC and Protocol Buffers** are favored for all service-to-service communication.
     *   **Persistence:** **SQLite** is the standard for local-first development and demo environments.
     *   **Advanced:** Evaluate **Event Sourcing** and **CQRS** for complex domains requiring high auditability or diverging performance needs.
 *   **Infrastructure & Containers:**

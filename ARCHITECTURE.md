@@ -13,6 +13,7 @@ graph TD
     subgraph "Infrastructure (Adapters)"
         CLI[Cobra CLI]
         Web[Vite/React UI]
+        GRPC[gRPC / ConnectRPC]
         DB[(Postgres/FileDB)]
         AI[Gemini/OpenAI]
     end
@@ -40,8 +41,8 @@ graph TD
 ```
 
 ### Key Rules:
-1.  **Dependency Rule:** Dependencies only point *inwards*. The Core (`internal/core`) must never import from Adapters (`internal/adapters`) or external frameworks (e.g., Cobra, Gorm).
-2.  **Ports as Contracts:** Every interaction with the outside world must happen through an interface defined in `internal/core/ports`.
+1.  **Dependency Rule:** Dependencies only point *inwards*. The Core (`internal/core`) must never import from Adapters (`internal/adapters`) or external frameworks (e.g., Cobra, Gorm, gRPC).
+2.  **Ports as Contracts:** Every interaction with the outside world must happen through an interface defined in `internal/core/ports`. gRPC handlers should translate protobuf messages into domain entities.
 3.  **No Magic:** Do not use `init()` functions or global state. All dependencies (Adapters) must be injected into Services via constructors.
 
 ---
