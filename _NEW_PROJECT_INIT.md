@@ -16,7 +16,8 @@ Welcome to the start of your new project. This guide is the **Master Entry Point
 
 Before a single line of code is written, we must define the **Intent**.
 
-- [ ] **Define User Stories:** Identify the core personas and their primary goals. Store these in `docs/tracking/user_stories.md`.
+- [ ] **Initialize User Story Catalog:** Copy [USER_STORY_CATALOG_TEMPLATE.md](./templates/USER_STORY_CATALOG_TEMPLATE.md) to `docs/tracking/user_story_catalog.md`.
+- [ ] **Define User Stories:** Identify the core personas and their primary goals.
 - [ ] **Draft Technical Specs:** For every major feature, create a spec using the [SPEC_TEMPLATE.md](./templates/SPEC_TEMPLATE.md).
     - *Rigor Check:* Does the spec include the "happy path" and edge cases?
     - *Reference:* See [ARCHITECTURE.md](./ARCHITECTURE.md) for how to define Ports as contracts within these specs.

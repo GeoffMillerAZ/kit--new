@@ -16,7 +16,19 @@ Before implementation begins, we perform a standardized **Initial Architecture P
 
 ---
 
-## 2. Spec-Driven Development (SDD)
+## 2. User Story Catalog: The Master Proof
+
+To ensure every requirement is met and verified, we maintain a permanent **User Story Catalog** (using [USER_STORY_CATALOG_TEMPLATE.md](./templates/USER_STORY_CATALOG_TEMPLATE.md)).
+
+*   **Dual-Layer Verification:** Every story must be proven twice:
+    1.  **Backend Logic:** Verified via Table-Driven Tests (TDT).
+    2.  **User Experience:** Verified via Playwright UI flows.
+*   **Centralized Traceability:** The catalog links the User Story to its Technical Spec, its code implementation, and its multiple test artifacts.
+*   **Auditability:** This document proves that the application does exactly what it was specified to do, with no untested edge cases.
+
+---
+
+## 3. Spec-Driven Development (SDD)
 
 We never implement logic without a specification. The **Spec** is the "Prompt" for the AI and the "Source of Truth" for the developer.
 

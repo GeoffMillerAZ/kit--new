@@ -52,11 +52,13 @@ We avoid brittle, flat JSON blobs. Instead, we use a **Hierarchical Fixture Cata
 
 ## 4. User Story Catalog & UI Verification
 
-To prove the application works, we maintain a **User Story Catalog**.
+To prove the application works, we maintain a **User Story Catalog** as the central artifact for quality.
 
-*   **High-Fidelity Proof:** Every user story must have corresponding UI tests (Playwright) that utilize the hierarchical fixtures.
-*   **Visual Documentation:** These tests serve as executable documentation, proving that the application handles every defined state correctly.
-*   **Consistency:** The same fixtures used for unit tests must be used for UI verification to ensure the "Chain of Truth" remains unbroken.
+*   **Dual-Layer Proof:** Every user story must have:
+    1.  **Backend Tests (TDT):** Proving the domain logic is correct.
+    2.  **UI Tests (Playwright):** Proving the user flow is functional in the browser.
+*   **High-Fidelity Documentation:** The catalog serves as executable documentation, proving that the application handles every defined state correctly.
+*   **Consistency:** The same hierarchical fixtures used for unit tests must be used for UI verification to ensure the "Chain of Truth" remains unbroken.
 
 ---
 

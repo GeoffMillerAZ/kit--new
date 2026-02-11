@@ -26,6 +26,7 @@ For each major area below, create an **Evaluation Document** (e.g., `docs/audit/
 ## 2. Process & Traceability
 *Reference: [METHODOLOGY.md](./METHODOLOGY.md)*
 
+- [ ] **User Story Catalog:** Do we have a master list tracking the implementation and dual-layer verification (Backend + UI) of every story?
 - [ ] **Spec-Driven Gap:** Do we have features implemented without corresponding Technical Specs?
 - [ ] **Traceability Audit:** Can we link a line of code back to a User Story or Spec?
 - [ ] **ADR Presence:** Are our major architectural decisions documented, or are they tribal knowledge?

@@ -162,6 +162,7 @@ mindmap
     *   *Architecture:* Use "Subgraphs" in Flowcharts to enforce Hexagonal boundaries visually.
     *   *Logic:* Use Sequence diagrams in Specs to clarify the "Happy Path" vs "Error Path".
 *   **Template Library:** (Located in `docs/kit/templates/`)
+    *   ✅ `USER_STORY_CATALOG_TEMPLATE.md`: The master list for tracking story implementation and dual-layer verification.
     *   ✅ `SPEC_TEMPLATE.md`: The standard for defining features.
     *   ✅ `PLAN_TEMPLATE.md`: The standard for defining execution.
     *   ✅ `TRACKER_TEMPLATE.md`: The standard for status dashboarding.
