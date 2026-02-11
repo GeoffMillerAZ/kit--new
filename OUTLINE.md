@@ -146,6 +146,8 @@ mindmap
     *   **Hierarchical Fixtures:** Use composable Cuelang fixtures to build a **User Story Catalog** that proves UI and logic correctness.
     *   **Mocking:** Explicit dependency injection allows testing Core logic without real IO.
     *   **Coverage:** Use coverage profiles to identify untested decision branches.
+    *   **Quality Gates (CI):** Mandatory linting, coverage thresholds, and "Two-Key" PR approval.
+    *   **Visual Regression:** Use Playwright snapshots with hierarchical fixtures to detect UI shifts.
 *   **Data Fixtures (The Cue Advantage):**
     *   **Compositional Fixtures:** We do not write static JSON blobs for tests. We write Cue definitions.
     *   **Mixins:** Define a `#BaseUser`. Create a `#BannedUser` by simply unifying `#BaseUser & { status: "banned" }`.

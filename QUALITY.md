@@ -88,3 +88,26 @@ Quality includes performance. For public-facing web applications, we adhere to s
 *   **Lighthouse Score:** Target **99/100** for Performance on static content (blogs, marketing pages).
 *   **Core Web Vitals:** Must pass all Core Web Vitals (LCP, FID, CLS).
 *   **Bundle Analysis:** Use `@next/bundle-analyzer` to ensure no accidental bloat.
+
+---
+
+## 7. Automated Quality Gates (CI)
+
+We do not rely on "Good Intentions." Standards are enforced via the CI pipeline.
+
+*   **Zero-Failure Linting:** `golangci-lint` and `eslint` must pass on every PR.
+*   **Coverage Thresholds:** Automated tests must maintain a minimum coverage (e.g., 80%) on new code.
+*   **E2E Mandatory:** Playwright flows for every story in the catalog must pass before merging.
+*   **The "Two-Key" Rule:** A PR cannot be merged without:
+    1.  **Spec Approval:** An architect confirms the implementation matches the `docs/specs/`.
+    2.  **Test Proof:** The `User Story Catalog` shows green for both Backend and UI tests.
+
+---
+
+## 8. Visual Regression & Snapshots
+
+To prevent "silent" UI breakage (CSS leaks, layout shifts), we use **Visual Snapshot Testing**.
+
+*   **Golden Snapshots:** Playwright takes snapshots of critical UI components seeded with the **Hierarchical Fixture Catalog**.
+*   **Regression Detection:** Any pixel-level deviation triggers a failure, requiring a deliberate "Snapshot Update" or a fix.
+*   **State-Driven:** We test visual states for every scenario (e.g., Error State, Loading State, Success State) defined in the Spec.

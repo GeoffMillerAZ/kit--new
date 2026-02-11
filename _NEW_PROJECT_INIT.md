@@ -62,6 +62,8 @@ Maintain rigor during the build phase.
     3.  **Refactor:** Clean up while maintaining green status.
 - [ ] **Build the Fixture Catalog:** Create hierarchical, composable fixtures in Cuelang as defined in [QUALITY.md](./QUALITY.md).
 - [ ] **Verify in Demo Mode:** Ensure the app functions in `demo` mode with Role Selection and SQLite seeding as described in [STACK.md](./STACK.md).
+- [ ] **Enforce Quality Gates:** Set up CI to mandate linting, coverage thresholds, and "Two-Key" PR approval.
+- [ ] **Implement Visual Regression:** Use Playwright snapshots against the fixture catalog to detect UI shifts.
 
 ---
 

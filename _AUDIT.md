@@ -49,6 +49,8 @@ For each major area below, create an **Evaluation Document** (e.g., `docs/audit/
 - [ ] **TDT Adoption:** Are we using Table-Driven Tests for complex business logic?
 - [ ] **Fixture Composability:** Are our test fixtures flat and repetitive, or are they hierarchical and patched?
 - [ ] **User Story Catalog:** Do we have a verified catalog of UI flows that proves the app works?
+- [ ] **CI Quality Gates:** Does the pipeline automatically block PRs that fail linting or coverage thresholds?
+- [ ] **Visual Regression:** Are we detecting "silent" UI breakage through automated snapshots?
 
 ---
 
