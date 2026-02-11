@@ -17,7 +17,7 @@ Welcome to the start of your new project. This guide is the **Master Entry Point
 Before a single line of code is written, we must define the **Intent**.
 
 - [ ] **Initialize User Story Catalog:** Copy [USER_STORY_CATALOG_TEMPLATE.md](./templates/USER_STORY_CATALOG_TEMPLATE.md) to `docs/tracking/user_story_catalog.md`.
-- [ ] **Define User Stories:** Identify the core personas and their primary goals.
+- [ ] **User Story Planning:** Define core personas and their primary goals. Organize and prioritize these in the catalog.
 - [ ] **Draft Technical Specs:** For every major feature, create a spec using the [SPEC_TEMPLATE.md](./templates/SPEC_TEMPLATE.md).
     - *Rigor Check:* Does the spec include the "happy path" and edge cases?
     - *Reference:* See [ARCHITECTURE.md](./ARCHITECTURE.md) for how to define Ports as contracts within these specs.
@@ -44,6 +44,7 @@ We use a visual, at-a-glance process to select the "Best of Breed" tools for you
 Transition from "What" to "How" and "When".
 
 - [ ] **Create the Master Plan:** Use the [PLAN_TEMPLATE.md](./templates/PLAN_TEMPLATE.md) to define the strategic phases of the project.
+- [ ] **Story Phasing:** Map specific stories from the catalog to the strategic phases in the Master Plan to ensure incremental value delivery.
 - [ ] **Establish Traceability:** Every phase must link back to a User Story and forward to a Technical Spec.
 - [ ] **Define Verification Standards:** Reference [QUALITY.md](./QUALITY.md) to plan your testing strategy (Table-Driven Tests + Playwright flows).
 
